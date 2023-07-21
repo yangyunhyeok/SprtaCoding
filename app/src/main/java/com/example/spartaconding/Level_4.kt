@@ -1,7 +1,6 @@
 package com.example.spartaconding
 
 import android.media.VolumeShaper.Operation
-import java.util.Calendar
 
 
 fun main(){
@@ -26,37 +25,39 @@ fun main(){
         "/" -> cal.lv4(div,usernum1,usernum2)
         else -> println("올바른 값을 입력하세요")
     }
+    print("결과값은 : $result")
 
 }
-
     class Calculator{
-    fun lv4(sign:AbstractOperation,num1: Double, num2: Double){
-        return sign.Operation(num1,num2)
+    fun lv4(usersign: AbstractOperation, num1: Double, num2: Double):Double{
+        return usersign.Operation(num1,num2)
         }
     }
 
+
     abstract class AbstractOperation{
-        abstract fun Operation(num1:Double, num2:Double)
+        abstract fun Operation(num1:Double, num2:Double):Double
     }
 
     class AddOperation_L4 : AbstractOperation(){
-        override fun Operation(num1: Double, num2: Double){
-            num1 + num2
+        override fun Operation(num1: Double, num2: Double):Double {
+            return num1 + num2
         }
     }
     class SubstractOperation_L4 : AbstractOperation(){
-        override fun Operation(num1: Double, num2: Double){
-            num1 - num2
+        override fun Operation(num1: Double, num2: Double):Double{
+            return num1 - num2
         }
     }
     class MultiplyOperation_L4 : AbstractOperation(){
-        override fun Operation(num1: Double, num2: Double){
-            num1 * num2
+        override fun Operation(num1: Double, num2: Double):Double{
+           return num1 * num2
         }
     }
     class DivideOperation_L4 : AbstractOperation(){
-        override fun Operation(num1: Double, num2: Double){
-            num1 / num2
+        override fun Operation(num1: Double, num2: Double):Double{
+            return num1 / num2
         }
     }
+
 
